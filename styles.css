@@ -1,21 +1,36 @@
-body {
+/* Impostazioni base per eliminare scroll */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sfondo */
+  body {
     background-image: url("imgs/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 10% 20% 0% 20%; /* top right bottom left */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* spinge timer in alto, pianta in basso */
+    align-items: center;
+    padding: 20px 40px 0 40px;
+    box-sizing: border-box;
   }
   
-  
-
+  /* Sezione timer centrata in alto */
   #sez_timer {
     display: flex;
-    justify-content: center; /* centro orizzontale */
-    align-items: center;     /* centro verticale */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
-
-  #plant {
-    display: flex;
-    justify-content: center; /* centro orizzontale */
-    align-items: center;     /* centro verticale */
+  
+  /* Pianta centrata in basso */
+  #plant img {
+    width: 200px;
+    height: auto;
   }
+  
