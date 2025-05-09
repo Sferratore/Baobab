@@ -1,0 +1,13 @@
+body {
+    background-image: url("imgs/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10% 20% 0% 20%; /* top right bottom left */
+  }
+  
+  .sez_timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
