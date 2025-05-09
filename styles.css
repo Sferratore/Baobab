@@ -6,8 +6,16 @@ body {
     margin: 10% 20% 0% 20%; /* top right bottom left */
   }
   
-  .sez_timer {
+  
+
+  #sez_timer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* centro orizzontale */
+    align-items: center;     /* centro verticale */
+  }
+
+  #plant {
+    display: flex;
+    justify-content: center; /* centro orizzontale */
+    align-items: center;     /* centro verticale */
   }
