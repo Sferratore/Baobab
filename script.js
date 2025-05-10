@@ -1,4 +1,4 @@
-let seconds = 25000000;
+let seconds = 0;
 let interval = null;
 
 function formatTime(sec) {
@@ -12,6 +12,7 @@ const playBtn = document.getElementById('playButton');
 const stopBtn = document.getElementById('stopButton');
 const timerDisplay = document.getElementById('timer');
 const plantImg = document.querySelector('#plant img');
+const header = document.getElementById('header');
 
 playBtn.addEventListener('click', () => {
   if (interval) return;
@@ -20,10 +21,23 @@ playBtn.addEventListener('click', () => {
     seconds++;
     timerDisplay.textContent = formatTime(seconds);
     updatePlantStage(seconds);
+    if(seconds % 4 == 0){
+        header.textContent = 'Resta concentrato';
+    }
+    else if(seconds % 4 == 1){
+        header.textContent = 'Resta concentrato.';
+    }
+    else if(seconds % 4 == 2){
+        header.textContent = 'Resta concentrato..';
+    }
+    else{
+        header.textContent = 'Resta concentrato...';
+    }
   }, 1000);
 
   playBtn.style.display = 'none';
   stopBtn.style.display = 'inline';
+  
 });
 
 stopBtn.addEventListener('click', () => {
