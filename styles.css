@@ -27,6 +27,14 @@ html, body {
     align-items: center;
     gap: 20px;
   }
+
+  /* Sezione header centrata in alto */
+  #sez_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
   
   /* Pianta centrata in basso */
   #plant img {

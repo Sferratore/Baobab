@@ -1,4 +1,4 @@
-let seconds = 0;
+let seconds = 25000000;
 let interval = null;
 
 function formatTime(sec) {
