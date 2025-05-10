@@ -8,11 +8,26 @@ function formatTime(sec) {
   return `${hrs}:${mins}:${secs}`;
 }
 
-document.getElementById('playButton').addEventListener('click', () => {
+const playBtn = document.getElementById('playButton');
+const stopBtn = document.getElementById('stopButton');
+const timerDisplay = document.getElementById('timer');
+
+playBtn.addEventListener('click', () => {
   if (interval) return;
 
   interval = setInterval(() => {
     seconds++;
-    document.getElementById('timer').textContent = formatTime(seconds);
+    timerDisplay.textContent = formatTime(seconds);
   }, 1000);
+
+  playBtn.style.display = 'none';
+  stopBtn.style.display = 'inline';
+});
+
+stopBtn.addEventListener('click', () => {
+  clearInterval(interval);
+  interval = null;
+
+  playBtn.style.display = 'inline';
+  stopBtn.style.display = 'none';
 });
