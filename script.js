@@ -40,13 +40,23 @@ function updatePlantStage(sec) {
 
   if (hours >= 80) {
     plantImg.src = './imgs/plant_s5.png';
+    plantImg.style.width = 450;
+    plantImg.style.height = 450;
   } else if (hours >= 50) {
     plantImg.src = './imgs/plant_s4.png';
+    plantImg.style.width = 340;
+    plantImg.style.height = 340;
   } else if (hours >= 30) {
     plantImg.src = './imgs/plant_s3.png';
+    plantImg.style.width = 280;
+    plantImg.style.height = 280;
   } else if (hours >= 10) {
     plantImg.src = './imgs/plant_s2.png';
+    plantImg.style.width = 230;
+    plantImg.style.height = 230;
   } else {
     plantImg.src = './imgs/plant_s1.png';
+    plantImg.style.width = 200;
+    plantImg.style.height = 200;
   }
 }
