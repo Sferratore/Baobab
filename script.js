@@ -51,6 +51,7 @@ stopBtn.addEventListener('click', () => {
 // Cambia la piantina in base al tempo
 function updatePlantStage(sec) {
   const hours = sec / 3600;
+  let s1AnimationInterval; 
 
   if (hours >= 80) {
     plantImg.src = './imgs/plant_s5.png';
@@ -69,8 +70,13 @@ function updatePlantStage(sec) {
     plantImg.style.width = 230;
     plantImg.style.height = 230;
   } else {
-    plantImg.src = './imgs/plant_s1.png';
+    let toggle = false;
+    s1AnimationInterval = setInterval(() => {
+      toggle = !toggle;
+      plantImg.src = toggle ? './imgs/plant_s1.png' : './imgs/plant_s1_2.png';
+    }, 1000);
     plantImg.style.width = 200;
     plantImg.style.height = 200;
+
   }
 }
