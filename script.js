@@ -1,6 +1,6 @@
 let seconds = 0;
 let updateInterval = null;
-let s1AnimationInterval; 
+let plantAnimationInterval = null; 
 
 function formatTime(sec) {
   const hrs = String(Math.floor(sec / 3600)).padStart(2, '0');
@@ -16,7 +16,6 @@ const plantImg = document.querySelector('#plant img');
 const header = document.getElementById('header');
 
 playBtn.addEventListener('click', () => {
-  if (updateInterval) return;
 
   updateInterval = setInterval(() => {
     seconds++;
@@ -35,6 +34,10 @@ playBtn.addEventListener('click', () => {
         header.textContent = 'Resta concentrato...';
     }
   }, 1000);
+  
+  plantAnimationInterval = setInterval(() => {
+    animatePlant();
+  }, 1000)
 
   playBtn.style.display = 'none';
   stopBtn.style.display = 'inline';
@@ -43,9 +46,9 @@ playBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
   clearInterval(updateInterval);
-  clearInterval(s1AnimationInterval);
+  clearInterval(plantAnimationInterval);
   updateInterval = null;
-  s1AnimationInterval = null;
+  plantAnimationInterval = null;
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
@@ -71,13 +74,13 @@ function updatePlantStage(sec) {
     plantImg.style.width = 230;
     plantImg.style.height = 230;
   } else {
-    let toggle = false;
-    s1AnimationInterval = setInterval(() => {
-      toggle = !toggle;
-      plantImg.src = toggle ? './imgs/plant_s1.png' : './imgs/plant_s1_2.png';
-    }, 1000);
+    plantImg.src = './imgs/plant_s1.png';
     plantImg.style.width = 200;
     plantImg.style.height = 200;
 
   }
 }
+
+function animatePlant(){
+    plantImg.src = plantImg.src.includes('plant_s1.png') ? './imgs/plant_s1_2.png' : './imgs/plant_s1.png';
+  }
