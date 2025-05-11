@@ -73,7 +73,7 @@ function updatePlantStage(sec) {
     let toggle = false;
     s1AnimationInterval = setInterval(() => {
       toggle = !toggle;
-      plantImg.src = toggle ? './imgs/plant_s1.png' : './imgs/plant_s1_2.png';
+      plantImg.src = toggle ? './imgs/plant_s1.png' : './imgs/plant_s1_2.jpg';
     }, 1000);
     plantImg.style.width = 200;
     plantImg.style.height = 200;
