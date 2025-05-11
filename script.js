@@ -1,5 +1,6 @@
 let seconds = 0;
-let interval = null;
+let updateInterval = null;
+let s1AnimationInterval; 
 
 function formatTime(sec) {
   const hrs = String(Math.floor(sec / 3600)).padStart(2, '0');
@@ -15,9 +16,9 @@ const plantImg = document.querySelector('#plant img');
 const header = document.getElementById('header');
 
 playBtn.addEventListener('click', () => {
-  if (interval) return;
+  if (updateInterval) return;
 
-  interval = setInterval(() => {
+  updateInterval = setInterval(() => {
     seconds++;
     timerDisplay.textContent = formatTime(seconds);
     updatePlantStage(seconds);
@@ -41,17 +42,17 @@ playBtn.addEventListener('click', () => {
 });
 
 stopBtn.addEventListener('click', () => {
-  clearInterval(interval);
-  interval = null;
+  clearInterval(updateInterval);
+  clearInterval(s1AnimationInterval);
+  updateInterval = null;
+  s1AnimationInterval = null;
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
 });
 
-// Cambia la piantina in base al tempo
 function updatePlantStage(sec) {
   const hours = sec / 3600;
-  let s1AnimationInterval; 
 
   if (hours >= 80) {
     plantImg.src = './imgs/plant_s5.png';
