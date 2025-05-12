@@ -42,3 +42,8 @@ html, body {
     height: auto;
   }
   
+  #header {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px; 
+  color: #000;     
+}
