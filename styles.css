@@ -43,7 +43,14 @@ html, body {
   }
   
   #header {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 12px; 
-  color: #000;     
-}
+    font-family: 'Press Start 2P', monospace;
+    font-size: 120%; 
+    color: #000;     
+  }
+
+  #timer {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 120%; 
+    color: #000;     
+  }
+
