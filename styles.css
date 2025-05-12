@@ -16,7 +16,7 @@ html, body {
     flex-direction: column;
     justify-content: space-between; /* spinge timer in alto, pianta in basso */
     align-items: center;
-    padding: 20px 40px 0 40px;
+    padding: 10% 20% 0 20%;
     box-sizing: border-box;
   }
   
@@ -25,7 +25,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 2%;
   }
 
   /* Sezione header centrata in alto */
@@ -33,7 +33,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 2%;
   }
   
   /* Pianta centrata in basso */
@@ -45,7 +45,7 @@ html, body {
   #header {
     font-family: 'Press Start 2P', monospace;
     font-size: 120%; 
-    color: #858585;
+    color: #4680d1;
     text-shadow: 
       1px 1px 0 #333333,
       2px 2px 0 #333333;    
@@ -54,7 +54,7 @@ html, body {
   #timer {
     font-family: 'Press Start 2P', monospace;
     font-size: 120%; 
-    color: #858585;
+    color: #4680d1;
     text-shadow: 
       1px 1px 0 #333333,
       2px 2px 0 #333333;    
