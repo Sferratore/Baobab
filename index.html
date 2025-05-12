@@ -1,21 +1,44 @@
-<html>
-    <header>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    </header>
-    <body>
-        <div id="sez_header">
-            <h1 id="header">Preparati a concentrarti!</h1>
-        </div>
-        <div id="sez_timer">
-            <h1 id="timer">00:00:00</h1>
-            <img id="playButton" src="./imgs/play.png" width="80" height="80" style="cursor: pointer;">
-            <img id="stopButton" src="./imgs/stop.png" width="80" height="80" style="display: none; cursor: pointer;">
-        </div>
-        <div id="plant">
-            <img src="./imgs/plant_s1.png">
-        </div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Inizia</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #87CEEB; /* azzurro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
 
-        <script src="script.js"></script>
-    </body>
+    #startBtn {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px #444;
+    }
+
+    #startBtn:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startBtn" onclick="startCounter()">Inizia</button>
+
+  <script>
+    function startCounter() {
+      window.open("main.html", "_blank", "width=800,height=600,resizable=yes");
+    }
+  </script>
+
+</body>
 </html>
