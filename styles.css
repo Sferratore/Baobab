@@ -45,12 +45,18 @@ html, body {
   #header {
     font-family: 'Press Start 2P', monospace;
     font-size: 120%; 
-    color: #000;     
+    color: #858585;
+    text-shadow: 
+      1px 1px 0 #333333,
+      2px 2px 0 #333333;    
   }
 
   #timer {
     font-family: 'Press Start 2P', monospace;
     font-size: 120%; 
-    color: #000;     
+    color: #858585;
+    text-shadow: 
+      1px 1px 0 #333333,
+      2px 2px 0 #333333;    
   }
 
