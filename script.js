@@ -68,8 +68,8 @@ function animatePlant(sec) {
     plantImg.style.height = 230;
   } else {
     plantImg.src = plantImg.src.includes('plant_s1.png') ? './imgs/plant_s1_2.png' : './imgs/plant_s1.png';
-    plantImg.style.width = 200;
-    plantImg.style.height = 200;
+    plantImg.style.width = 100;
+    plantImg.style.height = 100;
 
   }
 }
