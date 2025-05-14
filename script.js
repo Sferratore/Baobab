@@ -1,4 +1,4 @@
-let seconds = 35996;
+let seconds = 107995;
 let plantAnimationInterval = null; 
 
 function formatTime(sec) {
