@@ -6,7 +6,6 @@ html, body {
     overflow: hidden;
   }
   
-  /* Sfondo */
   body {
     background-image: url("imgs/background.jpg");
     background-size: cover;
@@ -14,13 +13,12 @@ html, body {
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* spinge timer in alto, pianta in basso */
+    justify-content: space-between;
     align-items: center;
     padding: 10% 20% 0 20%;
     box-sizing: border-box;
   }
   
-  /* Sezione timer centrata in alto */
   #sez_timer {
     display: flex;
     justify-content: center;
@@ -28,14 +26,12 @@ html, body {
     padding: 0% 0% 20% 0%
   }
 
-  /* Sezione header centrata in alto */
   #sez_header {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  /* Pianta centrata in basso */
   #plant img {
     width: 200;
     height: auto;
