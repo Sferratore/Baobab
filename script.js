@@ -51,19 +51,19 @@ function animatePlant(sec) {
   const hours = sec / 3600;
 
   if (hours >= 76) {
-    plantImg.src = plantImg.src.includes('plant_s4.png') ? './imgs/plant_s5_2.png' : './imgs/plant_s5.png';
+    plantImg.src = plantImg.src.includes('plant_s4.png') ? './imgs/plant_s4_2.png' : './imgs/plant_s5.png';
     plantImg.style.width = 450;
     plantImg.style.height = 450;
   } else if (hours >= 45) {
-    plantImg.src = plantImg.src.includes('plant_s3.png') ? './imgs/plant_s4_2.png' : './imgs/plant_s4.png';
+    plantImg.src = plantImg.src.includes('plant_s3.png') ? './imgs/plant_s3_2.png' : './imgs/plant_s4.png';
     plantImg.style.width = 340;
     plantImg.style.height = 340;
   } else if (hours >= 23) {
-    plantImg.src = plantImg.src.includes('plant_s2.png') ? './imgs/plant_s3_2.png' : './imgs/plant_s3.png';
+    plantImg.src = plantImg.src.includes('plant_s2.png') ? './imgs/plant_s2_2.png' : './imgs/plant_s3.png';
     plantImg.style.width = 280;
     plantImg.style.height = 280;
   } else {
-    plantImg.src = plantImg.src.includes('plant_s1.png') ? './imgs/plant_s2_2.png' : './imgs/plant_s2.png';
+    plantImg.src = plantImg.src.includes('plant_s1.png') ? './imgs/plant_s1_2.png' : './imgs/plant_s2.png';
     plantImg.style.width = 230;
     plantImg.style.height = 230;
   }
