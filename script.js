@@ -1,5 +1,6 @@
-let seconds = 0;
-let plantAnimationInterval = null; 
+let startTime = null;
+let updateInterval = null;
+let plantAnimationInterval = null;
 
 function formatTime(sec) {
   const hrs = String(Math.floor(sec / 3600)).padStart(2, '0');
@@ -15,33 +16,35 @@ const plantImg = document.querySelector('#plant img');
 const header = document.getElementById('header');
 
 playBtn.addEventListener('click', () => {
+  startTime = Date.now();
 
-  plantAnimationInterval = setInterval(() => {
-    seconds++;
-    timerDisplay.textContent = formatTime(seconds);
-    animatePlant(seconds);
-    if(seconds % 4 == 0){
+  updateInterval = setInterval(() => {
+    const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+    timerDisplay.textContent = formatTime(elapsedSeconds);
+    animatePlant(elapsedSeconds);
+
+    switch (elapsedSeconds % 4) {
+      case 0:
         header.textContent = 'Resta concentrato';
-    }
-    else if(seconds % 4 == 1){
+        break;
+      case 1:
         header.textContent = 'Resta concentrato.';
-    }
-    else if(seconds % 4 == 2){
+        break;
+      case 2:
         header.textContent = 'Resta concentrato..';
-    }
-    else{
+        break;
+      default:
         header.textContent = 'Resta concentrato...';
     }
   }, 1000);
 
   playBtn.style.display = 'none';
   stopBtn.style.display = 'inline';
-  
 });
 
 stopBtn.addEventListener('click', () => {
-  clearInterval(plantAnimationInterval);
-  plantAnimationInterval = null;
+  clearInterval(updateInterval);
+  updateInterval = null;
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
