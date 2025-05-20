@@ -6,6 +6,7 @@ let pauseDuration = 0;
 
 const playBtn = document.getElementById('playButton');
 const stopBtn = document.getElementById('stopButton');
+const restartBtn = document.getElementById('restartButton');
 const timerDisplay = document.getElementById('timer');
 const plantImg = document.querySelector('#plant img');
 const header = document.getElementById('header');
@@ -67,6 +68,7 @@ playBtn.addEventListener('click', () => {
 
   playBtn.style.display = 'none';
   stopBtn.style.display = 'inline';
+  restartBtn.style.display = 'inline';
 });
 
 stopBtn.addEventListener('click', () => {
