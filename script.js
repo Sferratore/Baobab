@@ -1,5 +1,8 @@
 let startTime = null;
 let updateInterval = null;
+let alreadyStarted = false;
+let pauseStartTime = null;
+let pauseDuration = 0;
 
 const playBtn = document.getElementById('playButton');
 const stopBtn = document.getElementById('stopButton');
@@ -37,10 +40,20 @@ function animatePlant(sec) {
 }
 
 playBtn.addEventListener('click', () => {
-  startTime = Date.now();
+  if (!alreadyStarted) {
+    // Prima volta: salva il timestamp iniziale
+    startTime = Date.now();
+    alreadyStarted = true;
+  } else if (pauseStartTime !== null) {
+    // Se si riprende dopo uno stop, aggiungiamo il tempo di pausa
+    const pauseEndTime = Date.now();
+    pauseDuration += pauseEndTime - pauseStartTime;
+    pauseStartTime = null;
+  }
 
   updateInterval = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const now = Date.now();
+    const elapsed = Math.floor((now - startTime - pauseDuration) / 1000);
     timerDisplay.textContent = formatTime(elapsed);
     animatePlant(elapsed);
 
@@ -59,6 +72,8 @@ playBtn.addEventListener('click', () => {
 stopBtn.addEventListener('click', () => {
   clearInterval(updateInterval);
   updateInterval = null;
+
+  pauseStartTime = Date.now(); // segna inizio della pausa
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
