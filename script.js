@@ -1,13 +1,11 @@
 let startTime = null;
 let updateInterval = null;
-let savedSeconds = 0;
 
 const playBtn = document.getElementById('playButton');
 const stopBtn = document.getElementById('stopButton');
 const timerDisplay = document.getElementById('timer');
 const plantImg = document.querySelector('#plant img');
 const header = document.getElementById('header');
-const fileInput = document.getElementById('caricaFile');
 
 function formatTime(sec) {
   const hrs = String(Math.floor(sec / 3600)).padStart(2, '0');
@@ -38,21 +36,11 @@ function animatePlant(sec) {
   }
 }
 
-function salvaSuFile(secondi) {
-  const blob = new Blob([secondi.toString()], { type: "text/plain" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "baobab_timer.txt"; // 👈 nome suggerito
-  link.click();
-  URL.revokeObjectURL(url);
-}
-
 playBtn.addEventListener('click', () => {
   startTime = Date.now();
 
   updateInterval = setInterval(() => {
-    const elapsed = savedSeconds + Math.floor((Date.now() - startTime) / 1000);
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
     timerDisplay.textContent = formatTime(elapsed);
     animatePlant(elapsed);
 
@@ -69,27 +57,9 @@ playBtn.addEventListener('click', () => {
 });
 
 stopBtn.addEventListener('click', () => {
-  const elapsed = Math.floor((Date.now() - startTime) / 1000);
-  const totalElapsed = savedSeconds + elapsed;
-
-  salvaSuFile(totalElapsed); 
   clearInterval(updateInterval);
   updateInterval = null;
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
-});
-
-// Carica file .txt con i secondi salvati
-fileInput.addEventListener('change', function (e) {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function () {
-    savedSeconds = parseInt(reader.result) || 0;
-    timerDisplay.textContent = formatTime(savedSeconds);
-    animatePlant(savedSeconds);
-  };
-  reader.readAsText(file);
 });
