@@ -75,7 +75,7 @@ stopBtn.addEventListener('click', () => {
   clearInterval(updateInterval);
   updateInterval = null;
 
-  pauseStartTime = Date.now(); // segna inizio della pausa
+  pauseStartTime = Date.now(); 
 
   playBtn.style.display = 'inline';
   stopBtn.style.display = 'none';
