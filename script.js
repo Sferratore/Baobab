@@ -59,10 +59,10 @@ playBtn.addEventListener('click', () => {
     animatePlant(elapsed);
 
     switch (elapsed % 4) {
-      case 0: header.textContent = 'Resta concentrato'; break;
-      case 1: header.textContent = 'Resta concentrato.'; break;
-      case 2: header.textContent = 'Resta concentrato..'; break;
-      default: header.textContent = 'Resta concentrato...';
+      case 0: header.textContent = 'Stay focused'; break;
+      case 1: header.textContent = 'Stay focused.'; break;
+      case 2: header.textContent = 'Stay focused..'; break;
+      default: header.textContent = 'Stay focused...';
     }
   }, 1000);
 
